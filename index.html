@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" id="togo-fonts-css"
+        href="https://fonts.googleapis.com/css?family=DM+Sans%3A300%2C400%2C500%2C600%2C700%7COutfit%3A300%2C400%2C500%2C600%2C700%7CMarcellus%3A400&amp;subset=latin%2Clatin-ext"
+        media="all">
+</head>
+
+<body>
+    <section class="Top-Section">
+        <div id="header">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="Img/white.svg" alt="">
+                </a>
+            </div>
+
+        <button class="hamburger" onclick="openMenu()">☰</button>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+
+  <!-- MAIN -->
+  <div class="menu-panel active" data-level="main">
+    <div class="menu-header">
+      <span>Menu</span>
+      <button onclick="closeMenu()">✕</button>
+    </div>
+
+    <ul>
+      <li class="has-child" data-target="destinations">
+        Destinations <span>›</span>
+      </li>
+      <li class="has-child" data-target="tours">
+        Tours <span>›</span>
+      </li>
+      <li>About</li>
+      <li>Contact</li>
+    </ul>
+  </div>
+
+  <!-- DESTINATIONS -->
+  <div class="menu-panel" data-level="destinations">
+    <div class="menu-header">
+      <button class="back">←</button>
+      <span>Destinations</span>
+      <button onclick="closeMenu()">✕</button>
+    </div>
+
+    <ul>
+      <li>France</li>
+      <li>Italy</li>
+      <li>Thailand</li>
+      <li>Japan</li>
+    </ul>
+  </div>
+
+  <!-- TOURS -->
+  <div class="menu-panel" data-level="tours">
+    <div class="menu-header">
+      <button class="back">←</button>
+      <span>Tours</span>
+      <button onclick="closeMenu()">✕</button>
+    </div>
+
+    <ul>
+      <li>Adventure</li>
+      <li>Luxury</li>
+      <li>Family</li>
+    </ul>
+  </div>
+
+</div>
+
+            <div class="nav">
+                <ul class="nav-links">
+                    <li><a href="home.html">Home</a>
+                        <svg class="arrow" aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                    </li>
+                    <div class="menu-anchor">
+                        <span class="menu-trigger">Destinations
+                            <svg class="arrow" aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                        </span>
+
+                        <div class="mega-menu">
+                            <!-- LEFT -->
+                            <div class="menu-left">
+                                <h4>Top destinations</h4>
+                                <ul>
+
+                                    <li data-target="france" class="active">France <span>›</span></li>
+                                    <li data-target="thailand">Thailand <span>›</span></li>
+                                    <li data-target="uk">United Kingdom <span>›</span></li>
+                                    <li data-target="us">United States <span>›</span></li>
+                                </ul>
+                                <a href="#" class="view-all">View All</a>
+                            </div>
+
+                            <!-- CENTER -->
+                            <div class="menu-center">
+
+                                <div class="content active" id="france">
+                                    <h3>TOP DESTINATIONS IN FRANCE</h3>
+                                    <div class="grid">
+                                        <div class="item">
+                                            <img src="Img/lyon-686cc79b18f80.webp" />
+                                            <span>Lyon</span>
+                                        </div>
+                                        <div class="item">
+                                            <img src="Img/marselle-686cc8d569ccb.webp" /><span>Marseille</span>
+                                        </div>
+                                        <div class="item">
+                                            <img src="Img/paris-686cd06e894e7.webp" /><span>Paris</span>
+                                        </div>
+
+                                        <div class="item">
+                                            <img src="Img/toulouse-686cc7fe4227b.webp" /><span>Toulouse</span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="view-all">View All</a>
+                                </div>
+
+                                <div class="content" id="thailand">
+                                    <h3>TOP DESTINATIONS IN THAILAND</h3>
+                                    <div class="grid">
+                                        <div class="item">
+                                            <img src="Img/bangkok-686cc74803a5a.webp" /><span>Bangkok</span>
+                                        </div>
+                                        <div class="item">
+                                            <img src="Img/phuket-686cc7d84b16a.webp" /><span>Phuket</span>
+                                        </div>
+                                        <div class="item">
+                                            <img src="Img/132.webp" /><span>Chiang Mai</span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="view-all">View All</a>
+                                </div>
+
+                                <div class="content" id="uk">
+                                    <h3>TOP DESTINATIONS IN UNITED KINGDOM</h3>
+                                    <div class="grid">
+                                        <div class="item">
+                                            <img
+                                                src="https://images.unsplash.com/photo-1469474968028-56623f02e42e" /><span>London</span>
+                                        </div>
+                                        <div class="item">
+                                            <img
+                                                src="https://images.unsplash.com/photo-1488747279002-c8523379faaa" /><span>Manchester</span>
+                                        </div>
+                                        <div class="item">
+                                            <img
+                                                src="https://images.unsplash.com/photo-1488747279002-c8523379faaa" /><span>Glasgow</span>
+                                        </div>
+                                        <div class="item">
+                                            <img
+                                                src="https://images.unsplash.com/photo-1488747279002-c8523379faaa" /><span>Briminghams</span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="view-all">View All</a>
+                                </div>
+
+                                <div class="content" id="us">
+                                    <h3>TOP DESTINATIONS IN UNITED STATES</h3>
+                                    <div class="grid">
+                                        <div class="item">
+                                            <img
+                                                src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" /><span>New
+                                                York</span>
+                                        </div>
+                                        <div class="item">
+                                            <img
+                                                src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29" /><span>Los
+                                                Angeles</span>
+                                        </div>
+                                        <div class="item">
+                                            <img
+                                                src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29" /><span>Chicago</span>
+                                        </div>
+                                        <div class="item">
+                                            <img
+                                                src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29" /><span>Houston
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="view-all">View All</a>
+                                </div>
+                            </div>
+
+                            <!-- RIGHT -->
+                            <div class="menu-right">
+                                <h2>Togo<br />Travel<br />Booking<br />WordPress</h2>
+                                <p>The most complete Tour Management System</p>
+                                <button>Get it now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <li><a href="contact.html">Tour listing</a>
+                        <svg class="arrow" aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                    </li>
+                    <li><a href="contact.html">Pages</a>
+                        <svg class="arrow" aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="phone-call">
+                <a href="#">
+                    <span class="elementor-button-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path
+                                d="M10.7 9.8911C8.90374 11.7816 4.32186 7.24088 6.12496 5.34315C7.22586 4.18447 5.98222 2.8603 5.29385 1.887C4.00193 0.0603317 1.16578 2.58231 1.25192 4.18658C1.52355 9.24564 6.99616 15.241 12.2956 14.718C13.9535 14.5545 15.8584 11.5604 13.9567 10.4661C13.0059 9.91899 11.7007 8.83789 10.7 9.8911Z"
+                                stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg></span>
+                    <Span class="phone-call-text">+00 232 6777</Span>
+                </a>
+            </div>
+        </div>
+
+        <Div id="bottom-header">
+            <h4>THE STUNNING GEM OF VIETNAM</h4>
+            <h2>VINH HY BAY</h2>
+            <a href="#" class="btn btn-learn">Learn more</a>
+        </Div>
+    </section>
+
+    <section class="second-info">
+        <div class="heading-title-element-left">
+            <img decoding="async" width="18" height="20"
+                src="https://togo.uxper.co/wp-content/uploads/2025/05/starfish-1.svg"
+                class="attachment-full size-full wp-image-3648" alt="">
+            <p class="heading-title-text">why travel to vinh hy</p>
+        </div>
+
+
+        <div class="heading-title-element-center">
+            <h2>A hidden paradise of turquoise bays, coral reefs, and tranquil village.</h2>
+            <p>Lorem ipsum dolor sit amet consectetur. Massa consectetur ut eget eget amet. Nec sed sapien elementum eu
+                volutpat at. Mauris lobortis interdum orci sed et enim pulvinar sit. </p>
+            <p>Nibh phasellus faucibus nulla sodales nibh adipiscing donec cras a. Pellentesque aenean natoque vitae
+                integer nibh pharetra id enim.</p>
+        </div>
+
+        <div class="heading-title-element-right">
+            <img decoding="async" width="120" height="50" src="img/wave.svg"
+                class="attachment-full size-full wp-image-3649" alt="">
+        </div>
+    </section>
+
+    <section id="third-info">
+        <div class="heading-title-element-box">
+            <div class="box box-1">
+                <h4>Untouched natural beauty</h4>
+                <p>Tincidunt sollicitudin leo porta commodo nec tortor adipiscing felis vulputate.</p>
+                <img src="img/crab-1-1.svg" alt="">
+            </div>
+
+            <div class="box box-2">
+                <h4>Breathtaking coral reefs</h4>
+                <p>Tincidunt sollicitudin leo porta commodo nec tortor adipiscing felis vulputate.</p>
+                <img src="img/jellyfish-1.svg" alt="">
+            </div>
+
+            <div class="box box-3">
+                <h4>Hidden beaches</h4>
+                <p>Tincidunt sollicitudin leo porta commodo nec tortor adipiscing felis vulputate.</p>
+                <img src="img/sandals-1.svg" alt="">
+            </div>
+
+            <div class="box box-4">
+                <h4>Fresh local cuisine</h4>
+                <p>Tincidunt sollicitudin leo porta commodo nec tortor adipiscing felis vulputate.</p>
+                <img src="img/seaweed-1.svg" alt="">
+            </div>
+    </section>
+
+    <section class="fourth-info">
+        <div class="body-title-element">
+            <h2>Discover the untouched beauty of Vinh Hy</h2>
+            <p>Lorem ipsum dolor sit amet consectetur. Odio ut tellus neque pulvinar ridiculus nisl.</p>
+            <a href="" class="btn btn-explore">Explore Tours</a>
+        </div>
+
+        <div class="slideshow">
+
+            <div class="carousel">
+                <div class="card active">
+                    <img src="Img/lyon-686cc79b18f80.webp" alt="">
+                    <h3>Lyon</h3>
+                    <p>1 Tours</p>
+                    <a href="">
+                        <svg aria-hidden="true" width="24px" role="img" focusable="false" viewBox="0 0 24 24"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.5 12H19.5M19.5 12L13.875 6M19.5 12L13.875 18" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <img src="Img/marselle-686cc8d569ccb.webp" alt="">
+                    <h3>Marseille</h3>
+                    <p>2 Tours</p>
+                    <a href="">
+                        <svg aria-hidden="true" width="24px" role="img" focusable="false" viewBox="0 0 24 24"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.5 12H19.5M19.5 12L13.875 6M19.5 12L13.875 18" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <img src="Img/phuket-686cc7d84b16a.webp" alt="">
+                    <h3>Phuket</h3>
+                    <p>3 Tours</p>
+                    <a href="">
+                        <svg aria-hidden="true" width="24px" role="img" focusable="false" viewBox="0 0 24 24"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.5 12H19.5M19.5 12L13.875 6M19.5 12L13.875 18" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <img src="Img/lyon-686cc79b18f80.webp" alt="">
+                    <h3>Lyon</h3>
+                    <p>3 Tours</p>
+                    <a href="">
+                        <svg aria-hidden="true" width="24px" role="img" focusable="false" viewBox="0 0 24 24"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.5 12H19.5M19.5 12L13.875 6M19.5 12L13.875 18" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <img src="Img/glasgow-686cc76a0f936.webp" alt="">
+                    <h3>Glasgow</h3>
+                    <p>3 Tours</p>
+                    <a href="">
+                        <svg aria-hidden="true" width="24px" role="img" focusable="false" viewBox="0 0 24 24"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.5 12H19.5M19.5 12L13.875 6M19.5 12L13.875 18" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="fifth-info">
+        <div class="heading">
+            <div class="heading-title-wrap">
+                <img decoding="async" width="18" height="20"
+                    src="https://togo.uxper.co/wp-content/uploads/2025/05/starfish-1.svg"
+                    class="attachment-full size-full wp-image-3648" alt="">
+                <p class="heading-title">TESTIMONIAL</p>
+            </div>
+            <div class="heading-content">
+                <p class="heading-bold">We are trusted by our customer</p>
+                <p>Average rating <span class="heading-bold">4.9</span> from <span class="heading-bold">597</span>
+                    revies</p>
+            </div>
+        </div>
+        <div class="center">
+
+            <div class="testimonial">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p class="text" id="text">
+                    Lorem ipsum dolor sit amet consectetur. Eget pharetra et ipsum sem sagittis amet sagittis.
+                </p>
+
+                <div class="author">
+                    <img id="avatar" src="https://i.pravatar.cc/100?img=32">
+                    <div>
+                        <strong id="name">John Doe</strong>
+                        <p id="job">CEO, Company Name</p>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button id="prev">‹</button>
+                    <button id="next">›</button>
+                </div>
+
+            </div>
+
+            <div class="element-widget">
+                <img class="img1" src="img/434765631_25517128674552499_884509398758018613_n-1.webp" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="faq-title">
+            <img decoding="async" width="18" height="20"
+                src="https://togo.uxper.co/wp-content/uploads/2025/05/starfish-1.svg"
+                class="attachment-full size-full wp-image-3648" alt="">
+            <p class="faq-heading-title ">LET'S KNOW MORE</p>
+        </div>
+        <div class="faq-sub">
+            <h2>Frequently asked questions</h2>
+            <a href="#" class="btn btn-read">Read more</a>
+        </div>
+        <div class="faq-grid">
+            <!-- LEFT COLUMN -->
+            <div class="faq-col">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How can I book a tour?
+                        <span class="icon">⌄</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Are there any age restrictions for the tour?
+                        <span class="icon">⌄</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div>
+                            <p>No age restriction, but children must be accompanied.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What is included in the tour package?
+                        <span class="icon">⌄</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div>
+                            <p>Hotel, guide, meals, transportation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="faq-col">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How can I book a tour?
+                        <span class="icon">⌄</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div>
+                            <p>You can book online or via support.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Are there any age restrictions for the tour?
+                        <span class="icon">⌄</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div>
+                            <p>Depends on tour difficulty.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What is included in the tour package?
+                        <span class="icon">⌄</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="wrap-element">
+            <div class="footer-element">
+                <div class="footer-title">
+                    <h2>Ready to explore? Let's chat about your dream trip</h2>
+                    <p>Let your wanderlust soar! Start exploring today and let unforgettable experiences await!</p>
+                    <a href="#" class="btn btn-plan">Plan your trips</a>
+                </div>
+            </div>
+            <div class="footer-element2">
+                <img src="Img/white.svg" alt="">
+                <div class="link1">
+                    <a href=""><span>Company</span></a>
+                    <a href=""><span>Services</span></a>
+                    <a href=""><span>Needs Help?</span></a>
+                    <a href=""><span>Connect</span></a>
+                </div>
+                <div class="link2">
+                    <a href="">
+                        <svg aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M6.5 10V14H9.5V21H13.5V14H16.5L17.5 10H13.5V8C13.5 7.45533 13.9553 7 14.5 7H17.5V3H14.5C11.7767 3 9.5 5.27667 9.5 8V10H6.5Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="">
+                        <svg aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16.5 3H7.5C5.01472 3 3 5.01472 3 7.5V16.5C3 18.9853 5.01472 21 7.5 21H16.5C18.9853 21 21 18.9853 21 16.5V7.5C21 5.01472 18.9853 3 16.5 3Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            </path>
+                            <path
+                                d="M15.4621 11.4866C15.5701 12.2148 15.4457 12.9585 15.1067 13.612C14.7676 14.2654 14.2311 14.7953 13.5736 15.1263C12.916 15.4573 12.1708 15.5725 11.444 15.4555C10.7171 15.3386 10.0457 14.9954 9.52513 14.4749C9.00457 13.9543 8.66141 13.2829 8.54446 12.556C8.4275 11.8292 8.5427 11.084 8.87368 10.4264C9.20466 9.76886 9.73456 9.23238 10.388 8.89332C11.0415 8.55426 11.7852 8.42988 12.5134 8.53786C13.2562 8.64801 13.9439 8.99414 14.4749 9.52513C15.0059 10.0561 15.352 10.7438 15.4621 11.4866Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            </path>
+                            <path d="M17 6.5H17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </svg>
+                    </a>
+                    <a href="">
+                        <svg aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M21 4.85004C20.1 5.29326 19.218 5.47326 18.3 5.74552C17.2911 4.6013 15.7953 4.53798 14.358 5.07889C12.4268 5.80566 12 7.52863 12 9.36363C9.0795 9.43871 6.4785 8.10181 4.8 5.74552C4.8 5.74552 1.0362 12.4689 8.4 15.6953C6.7152 16.8233 5.0349 17.584 3 17.5044C5.9772 19.1352 9.2217 19.696 12.0306 18.8765C16.66 17.5249 19.3896 13.1539 19.3638 8.479C19.3638 8.25378 20.7228 5.97256 21 4.85004Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            </path>
+                        </svg>
+                    </a>
+
+                    <a href="">
+                        <svg aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.5 9.90776V14.0923C10.5 14.3174 10.6847 14.5 10.9125 14.5C10.9934 14.5 11.0725 14.4765 11.1399 14.4324L14.3149 12.3582C14.505 12.234 14.5572 11.9811 14.4316 11.7932C14.4016 11.7483 14.3628 11.7097 14.3176 11.6797L11.1426 9.5694C10.9536 9.44378 10.6973 9.49339 10.5702 9.68029C10.5244 9.74755 10.5 9.82675 10.5 9.90776Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            </path>
+                            <path
+                                d="M2 12C2 8.70017 2 7.05025 3.46447 6.02513C4.92893 5 7.28595 5 12 5C16.714 5 19.0711 5 20.5355 6.02513C22 7.05025 22 8.70017 22 12C22 15.2998 22 16.9497 20.5355 17.9749C19.0711 19 16.714 19 12 19C7.28595 19 4.92893 19 3.46447 17.9749C2 16.9497 2 15.2998 2 12Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="">
+                        <svg aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7.45184 13.1792C6.34389 10.9181 7.85171 6.51186 12.9237 7.23221C18.5102 8.02564 17.5048 16.7095 12.8469 16.3703C11.373 16.263 10.8157 15.0416 10.6702 13.7937M10.6702 13.7937C10.5599 12.8477 10.6863 11.8865 10.8294 11.3841C11.0736 10.5269 11.4784 10.6435 11.1826 11.7773C11.0386 12.3291 10.863 13.0218 10.6702 13.7937ZM10.6702 13.7937C10.1558 15.8536 9.51973 18.4784 9.0394 20.5017"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            </path>
+                            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round"></circle>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./func/comment-slide.js"></script>
+    <script src="./func/slide-carousel.js"></script>
+    <script src="./func/mega-menu.js"></script>
+    <script src="./func/faq.js"></script>
+    <script src="./func/mobile-menu.js"></script>
+</body>
+
+</html>
