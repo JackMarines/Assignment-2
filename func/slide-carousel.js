@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let lastTime = 0;
   let velocity = 0;
   let momentum = null;
+  let momentumFrame = null;
 
   carousel.addEventListener('pointerdown', (e) => {
     if (e.button !== 0) return; // Only left mouse button
@@ -24,7 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
     startScroll = carousel.scrollLeft;
     lastX = e.clientX;
     lastTime = Date.now();
-    if (momentum) clearInterval(momentum);
+    if (momentum) { clearInterval(momentum); momentum = null; }
+    if (momentumFrame) { cancelAnimationFrame(momentumFrame); momentumFrame = null; }
     carousel.setPointerCapture(e.pointerId);
 
     
@@ -51,17 +53,31 @@ document.addEventListener('DOMContentLoaded', () => {
     carousel.classList.remove('dragging');
     
     // Apply momentum
-    if (Math.abs(velocity) > 0.1) {
-      let currentVelocity = velocity;
-      if (momentum) clearInterval(momentum);
-      momentum = setInterval(() => {
-        currentVelocity *= 0.95; // Friction
-        carousel.scrollLeft += currentVelocity;
-        if (Math.abs(currentVelocity) < 0.1) {
-          clearInterval(momentum);
-          snapToCenter();
+    // Use requestAnimationFrame for smooth deceleration across devices
+    if (Math.abs(velocity) > 0.02) {
+      let currentVelocity = velocity; // px per ms
+      let lastT = null;
+      const frictionPer16ms = 0.92; // per ~frame friction
+      const step = (t) => {
+        if (!lastT) lastT = t;
+        const dt = t - lastT; // ms
+        lastT = t;
+        // apply scroll (velocity is px/ms)
+        carousel.scrollLeft += currentVelocity * dt;
+        // apply friction scaled by dt
+        const factor = Math.pow(frictionPer16ms, dt / 16);
+        currentVelocity *= factor;
+        // stop condition
+        if (Math.abs(currentVelocity) < 0.02) {
+          momentumFrame = null;
+          // small timeout to allow final layout paint before snapping
+          setTimeout(() => snapToCenter(), 50);
+          return;
         }
-      }, 16);
+        momentumFrame = requestAnimationFrame(step);
+      };
+      if (momentumFrame) cancelAnimationFrame(momentumFrame);
+      momentumFrame = requestAnimationFrame(step);
     } else {
       snapToCenter();
     }

@@ -727,6 +727,7 @@ body {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
   scroll-behavior: smooth;
   user-select: none;
   -webkit-user-select: none;
@@ -1356,6 +1357,16 @@ body {
   bottom: 5px;
   right: 5px;
   width: 70px;
+}
+/* Ensure back-to-top is visible and accessible on small screens */
+@media (max-width: 768px) {
+  .back-to-top {
+    display: inline-flex !important;
+    z-index: 99999;
+    right: 18px;
+    bottom: 18px;
+    padding: 10px 12px;
+  }
 }
   
   .box-2 img{
