@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Only highlight the closest card to center
     cards.forEach(card => {
-      if (card === closest) {
+      if (card === closest) { 
         card.classList.add('is-center');
       } else {
         card.classList.remove('is-center');
